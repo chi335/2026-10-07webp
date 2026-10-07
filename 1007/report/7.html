@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>1</title>
+<script>
+    // big 함수 작성
+    function big(a, b) {
+        let num1 = parseInt(a);
+        let num2 = parseInt(b);
+        
+        if (num1 > num2) {
+            return num1;
+        } else {
+            return num2;
+        }
+    }
+</script>
+</head>
+<body>
+<script>
+    let b = big("625", "555");
+    document.write("큰수=" + b);
+</script>
+</body>
+</html>

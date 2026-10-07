@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>별 문자 출력하기</title>
+    <script>
+        function printStar() {
+            let input = prompt("정수를 입력하세요");
+
+            // 취소 버튼을 누르거나 아무것도 입력하지 않은 경우
+            if (input === null || input.trim() === "") {
+                document.write("입력 오류 입니다.");
+                return;
+            }
+
+            let n = parseInt(input);      // 정수로 변환
+            let f = parseFloat(input);    // 실수로 변환 (실수 여부 판별용)
+
+            /* 
+              [오류 조건]
+              1. isNaN(n) : 숫자가 아닌 문자열인 경우
+              2. n <= 0   : 양의 정수가 아닌 경우 (0 또는 음수)
+              3. n !== f  : 실수인 경우 (예: 3.14 -> parseInt는 3, parseFloat은 3.14)
+            */
+            if (isNaN(n) || n <= 0 || n !== f) {
+                document.write("입력 오류 입니다.");
+            } else {
+                // 정상적인 양의 정수인 경우 별 출력
+                for (let i = 1; i <= n; i++) {
+                    for (let j = 0; j < i; j++) {
+                        document.write("*");
+                    }
+                    document.write("<br>");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>별 문자 출력하기</h3>
+    <hr>
+    <script>
+        // printStar() 함수 호출
+        printStar();
+    </script>
+</body>
+</html>

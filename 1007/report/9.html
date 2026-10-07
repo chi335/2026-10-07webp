@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>eval()로 수식 계산</title>
+</head>
+<body>
+<h3>eval()로 수식 계산</h3>
+<hr>
+<script>
+    let expression = prompt("수식 입력");
+
+    if (expression === null || expression.trim() === "") {
+        document.write("수식이 입력되지 않았습니다.");
+    } else {
+        // eval() 함수를 사용하여 입력된 수식 문자열을 계산
+        let res = eval(expression);
+        
+        // 결과 출력 (예: 2+12*8-20/7 = 95.14285714285714)
+        document.write(expression + " = " + res);
+    }
+</script>
+</body>
+</html>
