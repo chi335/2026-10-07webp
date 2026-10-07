@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>윤년 판별 (prompt)</title>
+</head>
+<body>
+    <h3>윤년 판별 프로그램</h3>
+    <hr>
+    
+    <script>
+        // prompt 창으로 년도 입력받기
+        let input = prompt("판별할 년도를 입력하세요 (예: 2026):");
+        let year = parseInt(input);
+
+        // 취소를 눌렀거나 빈값이 입력되었을 때 처리
+        if (input === null || input.trim() === "" || isNaN(year)) {
+            document.write("올바른 년도를 입력하지 않았습니다. 새로고침 후 다시 시도해 주세요.");
+        } else {
+            // 윤년 판별 조건
+            // 1. 4로 나누어 떨어지고 100으로 나누어 떨어지지 않거나
+            // 2. 400으로 나누어 떨어지는 해
+            let isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+
+            document.write("입력한 년도 : " + year + "년<br><br>");
+            
+            if (isLeap) {
+                document.write("<span style='color: blue; font-size: 18px; font-weight: bold;'>" + year + "년은 윤년입니다! (2월이 29일까지 있습니다.)</span>");
+            } else {
+                document.write("<span style='color: black; font-size: 18px; font-weight: bold;'>" + year + "년은 평년입니다. (2월이 28일까지 있습니다.)</span>");
+            }
+        }
+    </script>
+</body>
+</html>
