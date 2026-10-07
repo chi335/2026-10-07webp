@@ -1,20 +1,27 @@
-# 📘 자바스크립트 언어 기본 (JavaScript Basics)
-
- 
-> 자바스크립트(JavaScript)의 기본 개념, 코드 작성 위치, 입출력 방식, 데이터 타입 및 변수, 연산자, 제어문, 함수 등 언어의 핵심 기초 내용을 정리한 문서입니다.
+# 📚 웹 프로그래밍 & GitHub 협업 통합 가이드
 
 ---
 
 ## 📑 목차
-1. [자바스크립트 개요](#1-자바스크립트-개요)
-2. [자바스크립트 코드 작성 위치](#2-자바스크립트-코드-작성-위치)
-3. [자바스크립트 입출력 및 다이얼로그](#3-자바스크립트-입출력-및-다이얼로그)
-4. [식별자, 변수 및 데이터 타입](#4-식별자-변수-및-데이터-타입)
-5. [연산자 (Operators)](#5-연산자-operators)
-6. [제어문 (Control Flow)](#6-제어문-control-flow)
-7. [함수 (Functions) 및 전역 함수](#7-함수-functions-및-전역-함수)
+1. [Chapter 06. 자바스크립트 언어 기본](#-chapter-06-자바스크립트-언어-기본)
+   - [1. 자바스크립트 개요](#1-자바스크립트-개요)
+   - [2. 자바스크립트 코드 작성 위치](#2-자바스크립트-코드-작성-위치)
+   - [3. 자바스크립트 입출력 및 다이얼로그](#3-자바스크립트-입출력-및-다이얼로그)
+   - [4. 식별자, 변수 및 데이터 타입](#4-식별자-변수-및-데이터-타입)
+   - [5. 연산자 (Operators)](#5-연산자-operators)
+   - [6. 제어문 (Control Flow)](#6-제어문-control-flow)
+   - [7. 함수 (Functions) 및 전역 함수](#7-함수-functions-및-전역-함수)
+2. [Git & GitHub 협업 가이드](#-git--github-협업-가이드)
+   - [1. Git vs GitHub 차이](#1-git-vs-github-차이)
+   - [2. 핵심 용어 정리](#2-핵심-용어-정리)
+   - [3. 팀장(Leader) 세팅 가이드](#3-팀장leader-세팅-가이드)
+   - [4. 팀원(Member) 세팅 및 작업 가이드](#4-팀원member-세팅-및-작업-가이드)
+   - [5. 협업 워크플로우 전체 요약](#5-협업-워크플로우-전체-요약)
+   - [6. 슬랙(Slack) 및 지라(Jira) 연동](#6-슬랙slack-및-지라jira-연동)
 
 ---
+
+# 📘 Chapter 06. 자바스크립트 언어 기본
 
 ## 1. 자바스크립트 개요
 
@@ -138,7 +145,6 @@ if (score >= 90) {
 ## 7. 함수 (Functions) 및 전역 함수
 
 ### 7.1 함수 선언 및 호출
-- 목적을 가진 코드 블록을 정의하여 재사용할 수 있게 함.
 ```javascript
 // 함수 정의
 function adder(a, b) {
@@ -156,3 +162,105 @@ let result = adder(10, 20); // result = 30
 - **`parseFloat(string)`**: 문자열을 실수로 변환.
 - **`isNaN(value)`**: 값이 숫자가 아닌지(`NaN`: Not a Number) 여부 확인 (숫자가 아니면 `true`).
 - **`isFinite(value)`**: 유효한 숫자이면 `true`, 무한대(`Infinity`)이면 `false` 반환.
+
+---
+---
+
+# 🐙 Git & GitHub 협업 가이드
+
+## 1. Git vs GitHub 차이
+
+| 구분 | Git | GitHub |
+| :--- | :--- | :--- |
+| **개념** | **내 컴퓨터 관리 프로그램** | **인터넷 클라우드 사이트** |
+| **역할** | 로컬 컴퓨터에서 코드 변경 이력 기록 및 관리 | 로컬에 기록된 코드를 웹상에 올려 팀원들과 공유 및 협업 |
+
+---
+
+## 2. 핵심 용어 정리
+
+- 📌 **Issue (이슈)**: 프로젝트 시작 전 "로그인 화면 만들기", "회원가입 버그 수정"처럼 해야 할 일이나 버그를 적어두는 게시판.
+- 📂 **Repository (저장소)**: 팀의 프로젝트 파일들과 전체 역사가 통째로 저장되는 클라우드상의 메인 폴더.
+- 🌿 **Branch (브랜치)**: 메인 원본 코드(`main`)를 직접 변경하지 않고, 원본을 복사해와 독립적으로 안전하게 작업할 수 있는 가지(작업 공간).
+- 📩 **Pull Request / PR (풀 리퀘스트)**: 내 브랜치에서 코딩을 마치고 깃허브에 올린 후, "내 코드를 메인 원본(`main`)에 합쳐주세요!"라고 요청하는 공식 문서.
+- 🔍 **Review (코드 리뷰)**: 팀원이 올린 PR을 다 함께 읽어보고 이상이나 에러가 없는지 피드백(댓글)을 남기는 과정.
+- 🔀 **Merge (머지)**: 코드 리뷰 검토가 완료되면 PR을 승인하여 메인 원본 코드에 최종 병합하는 단계.
+
+---
+
+## 3. 팀장(Leader) 세팅 가이드
+
+1. **새 레포지토리 생성**: GitHub 우측 상단의 `+` 버튼 ➔ `New repository` 클릭 후 이름 및 설명 작성.
+2. **초기 파일 설정**: `Add a README file` 체크 및 개발 환경에 맞는 `.gitignore` 템플릿 추가 ➔ `Create repository` 클릭.
+3. **팀원 초대**: `Settings` ➔ `Collaborators` ➔ `Add people` 버튼을 눌러 팀원의 GitHub ID 또는 이메일 검색 후 초대.
+4. **브랜치 보호 규칙 설정 (권장)**:
+   - `Settings` ➔ `Branches` ➔ `Add branch protection rule` 클릭.
+   - `main` 브랜치에 직접 푸시하지 못하도록 `Require a pull request before merging` 옵션을 활성화하여 코드가 꼬이는 것을 방지.
+
+---
+
+## 4. 팀원(Member) 세팅 및 작업 가이드
+
+### 1단계: 초대 수락 및 레포지토리 클론 (Clone)
+팀장의 초대를 수락한 뒤 레포지토리 URL을 복사하여 터미널에 입력:
+```bash
+git clone https://github.com/KimSeungHo23/test.git
+```
+
+### 2단계: 작업용 브랜치 생성 및 이동
+클론한 폴더로 이동(`cd 폴더명`) 후, 기능 단위의 새 브랜치 생성:
+```bash
+cd test
+git checkout -b feature/hello.html
+```
+
+### 3단계: 코드 작성 및 로컬 커밋
+코드 수정 완료 후 변경된 파일을 스테이징하고 커밋:
+```bash
+git add .
+git commit -m "인사말 파일 추가"
+```
+
+### 4단계: 원격 저장소 푸시 (Push)
+내 로컬 브랜치의 작업 내역을 GitHub 원격 저장소로 업로드:
+```bash
+git push origin feature/hello.html
+```
+
+### 5단계: Pull Request (PR) 작성
+GitHub 웹 페이지 접속 ➔ 상단의 `Compare & pull request` 버튼 클릭 ➔ 작업 내용을 작성하고 PR 제출.
+
+---
+
+## 5. 협업 워크플로우 전체 요약
+
+```text
+[팀장] 01. Repository 생성  ➔  02. Issue(할 일) 배정
+  │
+[팀원] 03. Fork & Clone 다운로드  ➔  04. Branch 생성  ➔  05. 작업 후 PR 생성
+  │
+[팀장/팀원] 06. Code Review (코드 검토 & 피드백)
+  │
+[팀장] 07. Merge (최종 병합)
+```
+
+---
+
+## 6. 슬랙(Slack) 및 지라(Jira) 연동
+
+### 📢 슬랙(Slack) 연동
+1. **GitHub for Slack 앱 설치**: 슬랙 앱 디렉토리에서 GitHub 앱 설치.
+2. **채널 연동 명령어**:
+   ```bash
+   /github subscribe 조직명/레포지토리이름
+   # 예시: /github subscribe KimSeungHo23/test
+   ```
+3. **알림 설정**: `/github settings` 명령어로 필요한 알림 세부 설정.
+
+### 📋 지라(Jira) 연동
+1. **GitHub for Jira 앱 설치**: Jira 프로젝트 설정 ➔ Apps ➔ `GitHub for Jira` 검색 및 설치.
+2. **조직 연동**: 지라 설정 화면에서 GitHub 계정 및 협업 레포지토리 연결.
+3. **이슈 키 포함 커밋**: 커밋 메시지 또는 PR 제목 앞에 지라 이슈 번호(예: `PROJ-123`) 명시.
+   ```bash
+   git commit -m "PROJ-123: 메인 페이지 HTML 레이아웃 작성"
+   ```
